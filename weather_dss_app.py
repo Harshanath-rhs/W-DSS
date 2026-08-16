@@ -407,7 +407,7 @@ if generate:
         st.dataframe(
             display_table.style.format({"Confidence (%)": "{:.1f}%"})
             .background_gradient(subset=["Confidence (%)"], cmap="RdYlGn", vmin=33, vmax=100)
-        )
+            )
         )
 
     csv = forecast.to_csv(index=False).encode("utf-8")
