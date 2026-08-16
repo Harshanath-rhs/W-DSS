@@ -405,9 +405,9 @@ if generate:
             "windspeed_10m_max": "Max Wind (km/h)"
         })
         st.dataframe(
-            display_table.style.background_gradient(
-                subset=["Confidence (%)"], cmap="RdYlGn", vmin=33, vmax=100
-            )
+            display_table.style.format({"Confidence (%)": "{:.1f}%"})
+            .background_gradient(subset=["Confidence (%)"], cmap="RdYlGn", vmin=33, vmax=100)
+        )
         )
 
     csv = forecast.to_csv(index=False).encode("utf-8")
